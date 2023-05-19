@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="index.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vac Reg Form</title>
+</head>
+<body>
+    <div class="regform">
+    <h2>Vaccine Registration Form</h2>
+
+    <form name="vacRegistration" id="vacRegForm">
+
+        <div id="errorMessage" class="error"></div>
+
+        <label for="fname" id="flabelName">First name:</label><br>
+        <input type="text" id="fname" name="fname" value=""><br><br>
+
+        <!-- <div id="error-mname" class="error"></div> -->
+        <label for="mname" id="mlabelName">Middle name:</label><br>
+        <input type="text" id="mname" name="mname" value=""><br><br>
+
+        <!-- <div id="error-lname" class="error"></div> -->
+        <label for="lname" id="llabelName">Last name:</label><br>
+        <input type="text" id="lname" name="lname" value=""><br><br>
+
+        <!-- <div id="error-birthday" class="error"></div> -->
+        <label for="birthday">Birthday:</label>
+        <input type="date" id="birthday" name="birthday"><br><br>
+
+        <!-- <div id="error-emailfield" class="error"></div> -->
+        <label for="emailfield">Email Add:</label><br>
+        <input type="email" id="emailfield" name="emailfield" value=""><br><br>
+        
+        <!-- REGION -->
+        <label for="region">Region:</label><br>
+        <select name="region" id="region">
+            <option value="">Please select a region</option>
+            <option value="reg1">Region I — Ilocos Region</option>
+            <option value="reg2">Region II — Cagayan Valley</option>
+            <option value="reg3">Region III — Central Luzon</option>
+            <option value="reg4a">Region IV‑A — CALABARZON</option>
+            <option value="mimaropa">MIMAROPA Region</option>
+            <option value="reg5">Region V — Bicol Region</option>
+            <option value="reg6">Region VI — Western Visayas</option>
+            <option value="reg7">Region VII — Central Visayas</option>
+            <option value="reg8">Region VIII — Eastern Visayas</option>
+            <option value="reg9">Region IX — Zamboanga Peninsula</option>
+            <option value="reg10">Region X — Northern Mindanao</option>
+            <option value="reg11">Region XI — Davao Region</option>
+            <option value="reg12">Region XII — SOCCSKSARGEN</option>
+            <option value="reg13">Region XIII — Caraga</option>
+            <option value="ncr">NCR — National Capital Region</option>
+            <option value="car">CAR — Cordillera Administrative Region</option>
+            <option value="barmm">BARMM — Bangsamoro Autonomous Region in Muslim Mindanao</option>
+        </select><br><br>
+
+        <!-- PROVINCE -->
+        <label for="province">Province:</label><br>
+        <input type="text" id="province" name="province" value=""><br><br>
+        <label for="barangay">Barangay:</label><br>
+        <input type="text" id="barangay" name="barangay" value=""><br><br>
+        <label for="street">Street:</label><br>
+        <input type="text" id="street" name="street" value=""><br><br>
+
+        <!-- GENDER -->
+        <label for="gender">Gender:</label><br>
+        <input type="radio" id="male" name="gender" value="Male">
+        <label for="male">Male&nbsp;</label>
+        <input type="radio" id="female" name="gender" value="Female">
+        <label for="female">Female&nbsp;</label>
+        <input type="radio" id="other" name="gender" value="Other">
+        <label for="other">Other</label><br><br>
+
+        <!-- DOSE1 VACCINE -->
+        <label for="vacBrand1">Vaccination Brand (Dose 1):</label><br>
+        <select name="vacBrand1" id="vacBrand1">
+            <option value="">Select Vaccine Brand</option>
+            <option value="Pfizer-BioNTech">Pfizer-BioNTech</option>
+            <option value="AstraZeneca">AstraZeneca</option>
+            <option value="Coronavac">Coronavac</option>
+            <option value="Sputnik V">Sputnik V</option>
+            <option value="Janssen">Janssen</option>
+            <option value="Covaxin">Covaxin</option>
+            <option value="Moderna">Moderna</option>
+            <option value="Sinopharm">Sinopharm</option>
+            <option value="Covovax">Covovax</option>
+
+        </select><br><br>
+
+        <label for="vacDate1">Date of Vaccination (Dose 1):</label>
+        <input type="date" id="vacDate1" name="vacDate1"><br><br>
+
+        <label for="vacSite1">Vaccination (Dose 1) Site:</label><br>
+        <input type="text" id="vacSite1" name="vacSite1" value=""><br><br>
+
+        <!-- 2ND VACCINE -->
+
+        <!-- 2ND DOSE QUESTION VERIFICATION -->
+        <label for="vacBrand2Q">Did you already get your second vaccination?</label><br>
+        <input type="radio" id="YvacBrand2Q" onclick="showAddForm()" name="vacBrand2Q" value="yes">
+        <label for="YvacBrand2Q">Yes&nbsp;</label>
+        <input type="radio" id="NvacBrand2Q" onclick="hideAddForm()" name="vacBrand2Q" value="no" checked>
+        <label for="NvacBrand2Q">No</label><br><br>
+
+        <!-- DOSE2 VACCINE -->
+        <div id="dose2Vac" class="disabled">
+            <label for="vacBrand2">Vaccination Brand (Dose 2):</label><br>
+            <select name="vacBrand2" id="vacBrand2">
+                <option value="">Select Vaccine Brand</option>
+                <option value="Pfizer-BioNTech">Pfizer-BioNTech</option>
+                <option value="AstraZeneca">AstraZeneca</option>
+                <option value="Coronavac">Coronavac</option>
+                <option value="Sputnik V">Sputnik V</option>
+                <option value="Janssen">Janssen</option>
+                <option value="Covaxin">Covaxin</option>
+                <option value="Moderna">Moderna</option>
+                <option value="Sinopharm">Sinopharm</option>
+                <option value="Covovax">Covovax</option>
+
+            </select><br><br>
+
+            <label for="vacDate2">Date of Vaccination (Dose 2):</label>
+            <input type="date" id="vacDate2" name="vacDate2"><br><br>
+
+            <label for="vacSite2">Vaccination (Dose 2) Site:</label><br>
+            <input type="text" id="vacSite2" name="vacSite2" value=""><br><br>
+
+        </div>
+
+        <div>
+            <button type="submit" name="submitButton">Submit</button>
+            <button type="reset" name="resetButton">Reset</button>
+        </div>
+
+        <div class="result" id="result"></div>
+    </form>
+    </div>
+
+    <script>
+        
+        const vacForm = document.forms.vacRegistration;
+        const inputFirstName = vacForm.fname;
+        const inputMiddleName = vacForm.mname;
+        const inputLastName = vacForm.lname;
+        const inputBirthday = vacForm.birthday;
+        const inputEmail = vacForm.emailfield;
+        const inputRegion = vacForm.region;
+        const inputProvince = vacForm.province;
+        const inputBarangay = vacForm.barangay;
+        const inputStreet = vacForm.street;
+        const inputGender = vacForm.gender;
+        const inputVacBrand1 = vacForm.vacBrand1;
+        const inputVacDate1 = vacForm.vacDate1;
+        const inputVacSite1 = vacForm.vacSite1;
+        const inputvacBrand2Q = vacForm.vacBrand2Q;
+        const inputVacBrand2 = vacForm.vacBrand2;
+        const inputVacDate2 = vacForm.vacDate2;
+        const inputVacSite2 = vacForm.vacSite2;
+
+        var resultContainer = document.getElementById('result');
+
+        vacForm.addEventListener('submit', function(event){
+            event.preventDefault();
+            let allFieldsFilled = true;
+            if (!inputFirstName.value) {
+                setError(inputFirstName, 'Fill-up the required field');
+                allFieldsFilled = false;
+                return;
+            }
+            if (!inputMiddleName.value) {
+                setError(inputMiddleName, 'Fill-up the required field');
+                allFieldsFilled = false;
+                return;
+            }
+            if (!inputLastName.value) {
+                setError(inputLastName, 'Fill-up the required field');
+                allFieldsFilled = false;
+                return;
+            }
+            if (!inputBirthday.value) {
+                setError(inputBirthday, 'Fill-up the required field');
+                allFieldsFilled = false;
+                return;
+            }
+            if (!inputEmail.value) {
+                setError(inputEmail, 'Fill-up the required field');
+                allFieldsFilled = false;
+                return;
+            }
+            if (!inputRegion.value) {
+                setError(inputRegion, 'Fill-up the required field');
+                allFieldsFilled = false;
+                return;
+            }
+            if (!inputProvince.value) {
+                setError(inputProvince, 'Fill-up the required field');
+                allFieldsFilled = false;
+                return;
+            }
+            if (!inputBarangay.value) {
+                setError(inputBarangay, 'Fill-up the required field');
+                allFieldsFilled = false;
+                return;
+            }
+            if (!inputStreet.value) {
+                setError(inputStreet, 'Fill-up the required field');
+                allFieldsFilled = false;
+                return;
+            }
+            validateGender();
+            if (!inputVacBrand1.value) {
+                setError(inputVacBrand1, 'Fill-up the required field');
+                allFieldsFilled = false;
+                return;
+            }
+            if (!inputVacDate1.value) {
+                setError(inputVacDate1, 'Fill-up the required field');
+                allFieldsFilled = false;
+                return;
+            }
+            if (!inputVacSite1.value) {
+                setError(inputVacSite1, 'Fill-up the required field');
+                allFieldsFilled = false;
+                return;
+            }
+            if (!inputvacBrand2Q.value) {
+                setError(inputvacBrand2Q, 'Please answer the question for 2nd Dose Vaccine');
+                allFieldsFilled = false;
+                if (!inputVacBrand2.value) {
+                    setError(inputVacBrand2, 'Fill-up the required field');
+                    allFieldsFilled = false;
+                    return;
+                }
+                if (!inputVacDate2.value) {
+                    setError(inputVacDate2, 'Fill-up the required field');
+                    allFieldsFilled = false;
+                    return;
+                }
+                if (!inputVacSite2.value) {
+                    setError(inputVacSite2, 'Fill-up the required field');
+                    allFieldsFilled = false;
+                    return;
+                }
+                return;
+            }
+
+            if (allFieldsFilled){
+                resultContainer.innerHTML = `
+                <p><strong>First Name:</strong> ${inputFirstName.value}</p>
+                <p><strong>Middle Name:</strong> ${inputMiddleName.value}</p>
+                <p><strong>Last Name:</strong> ${inputLastName.value}</p>
+                <p><strong>Birthday:</strong> ${inputBirthday.value}</p>
+                <p><strong>Email:</strong> ${inputEmail.value}</p>
+                <p><strong>Region:</strong> ${inputRegion.value}</p>
+                <p><strong>Province:</strong> ${inputProvince.value}</p>
+                <p><strong>Barangay:</strong> ${inputBarangay.value}</p>
+                <p><strong>Street:</strong> ${inputStreet.value}</p>
+                <p><strong>Gender:</strong> ${validateGender()}</p>
+                <p><strong>Vaccination Brand (Dose 1):</strong> ${inputVacBrand1.value}</p>
+                <p><strong>Date of Vaccination (Dose 1):</strong> ${inputVacDate1.value}</p>
+                <p><strong>Vaccination Site (Dose 1):</strong> ${inputVacSite1.value}</p>
+                <p><strong>Vaccination Brand (Dose 2):</strong> ${inputVacBrand2.value}</p>
+                <p><strong>Date of Vaccination (Dose 2):</strong> ${inputVacDate2.value}</p>
+                <p><strong>Vaccination Site (Dose 2):</strong> ${inputVacSite2.value}</p>`;
+            };
+        })
+
+        function setError (field, errorMsg) {
+            field.style.borderColor = 'red';
+            document.getElementById('errorMessage').innerText = errorMsg;
+
+            field.addEventListener('input', function() {
+                field.style.borderColor = '';
+                document.getElementById('errorMessage').innerText = '';
+            })
+        }
+
+        // === HIDE FOLLOW-UP Q ===
+        document.getElementById("dose2Vac").style.display = "none";
+        
+        function hideAddForm() {
+            document.getElementById("dose2Vac").style.display = "none";
+        }
+        function showAddForm() {
+            document.getElementById("dose2Vac").style.display = "block";
+        }
+
+        function validateGender () {
+    
+            let genderChecked = false;
+            let selectedGender = null;
+        
+            inputGender.forEach(input => {
+            if (input.checked) {
+                genderChecked = true;
+                selectedGender = input.value;
+            }
+            });
+        
+            if (!genderChecked) {
+            const genderField = document.querySelector('input[name="gender"]');
+            setError(genderField, "Gender is required!");
+            allFieldsFilled = false;
+            return false;
+            }
+        
+            return selectedGender;
+        }
+
+
+    </script>
+</body>
+</html>
